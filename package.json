@@ -1,0 +1,27 @@
+{
+  "name": "desafio2-nodejs-mirepertorio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dgutier08/desafio2-nodejs-mirepertorio.git"
+  },
+  "keywords": [],
+  "author": "Doris Gutierrez",
+  "license": "ISC",
+  "dev": "nodemon index.js",
+  "bugs": {
+    "url": "https://github.com/Dgutier08/desafio2-nodejs-mirepertorio/issues"
+  },
+  "homepage": "https://github.com/Dgutier08/desafio2-nodejs-mirepertorio#readme",
+  "Devdependencies": {
+    "express": "^4.18.2"
+  },
+  "dependencies": {
+    "cors": "^2.8.5"
+  }
+}
