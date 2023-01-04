@@ -75,27 +75,24 @@ res.status(200).json({
 
 //delete
 app.delete ("/canciones/:id",(req,res)=>{
-    try{
-        const {id}=req.params;
-        const canciones = JSON.parse(fs.readFileSync("repertorios.json","utf8"))
-        const index = canciones.findIndex((tema)=>tema.id===parseInt(id));
+  try{
+      const {id}=req.params;
+      const canciones = JSON.parse(fs.readFileSync("repertorios.json","utf8"))
+      const index = canciones.findIndex((tema)=>tema.id===parseInt(id));
 
-        console.log(index)
-        if (index===-1){
-            return res.status(404).json({
-            message:"la cancion que desa eliminar no se encuentra"
-            });
-        }
-            canciones.splice(index, 1);
-            fs.writeFileSync("repertorios.json", JSON.stringify(canciones));
-            res.send("cancion eliminada");
-            } catch (error) {
-    res.json({ message: "El recurso no esta disponible " });
-  }
+      console.log(index)
+      if (index===-1){
+          return res.status(404).json({
+          message:"la cancion que desa eliminar no se encuentra"
+          });
+      }
+          canciones.splice(index, 1);
+          fs.writeFileSync("repertorios.json", JSON.stringify(canciones));
+          res.send("cancion eliminada");
+          } catch (error) {
+  res.json({ message: "El recurso no esta disponible " });
+}
+})
 })
 
-app.listenerCount(PORT,(error)=>{
-    if (err){
-        console.error(err)
-    }
-})})
+app.listen(3000, console.log("encendido"));
